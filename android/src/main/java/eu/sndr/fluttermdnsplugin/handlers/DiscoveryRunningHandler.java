@@ -16,7 +16,7 @@ public class DiscoveryRunningHandler implements EventChannel.StreamHandler {
     public DiscoveryRunningHandler(Context context){
         this.handler = new Handler(Looper.getMainLooper());
 
-        WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        WifiManager wifi = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         multicastLock = wifi.createMulticastLock("multicastLock");
         multicastLock.setReferenceCounted(true);
     }
